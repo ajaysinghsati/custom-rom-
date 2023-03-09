@@ -2,20 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mobile Firmware</title>
+  <title>Mobile Firmware Admin Panel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Mobile Firmware</h1>
+    <h1>Mobile Firmware Admin Panel</h1>
   </header>
   
   <main>
-    <div class="firmware">
-      <h2>Latest Firmware</h2>
-      <p>Version 1.0.0</p>
-      <a href="firmware.zip">Download Firmware</a>
-    </div>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <div>
+        <label for="version">Firmware Version:</label>
+        <input type="text" id="version" name="version" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+      </div>
+      <div>
+        <label for="firmware">Firmware File:</label>
+        <input type="file" id="firmware" name="firmware" required>
+      </div>
+      <button type="submit">Upload Firmware</button>
+    </form>
   </main>
   
   <footer>
